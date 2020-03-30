@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  username: string =window.localStorage.getItem('user_name')
+  
+  constructor(
+    private Router: Router
+  ) { }
 
   ngOnInit(): void {
+    if(this.username == null){
+      this.Router.navigate(['/']);
+        }
   }
+
+  logout(){
+    window.localStorage.removeItem('auth_token');
+    window.localStorage.removeItem('user_name');
+    this.Router.navigate(['/']);
+    window.alert('已退出登录')
+  }
+
+  
 
 }

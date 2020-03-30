@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
   login(){
     const formData = this.loginForm;
     console.log(formData);
-    this.http.post('http://192.168.0.104:8080/login',formData).toPromise().then(data => {
+    this.http.post('http://192.168.0.104:8080/login',formData).toPromise().then((data:any) => {
+      window.localStorage.setItem('auth_token',data.Token)
+      window.localStorage.setItem('user_name',data.User.username)
       console.log(data)
       this.Router.navigate(['/list'])
     }).catch(err => {
