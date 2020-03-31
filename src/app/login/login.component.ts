@@ -38,4 +38,9 @@ export class LoginComponent implements OnInit {
     )
   }
 
+  forgetPassword(e){
+    e.preventDefault();
+    window.alert("请联系管理员！");
+  }
+
 }
