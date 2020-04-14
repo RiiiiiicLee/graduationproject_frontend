@@ -35,7 +35,7 @@ const routes: Routes = [
       component: NewlistComponent
     },
     {
-      path: 'edit',
+      path: 'edit/:username',
       component: EditlistComponent
     }
   ]

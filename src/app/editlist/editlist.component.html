@@ -1,18 +1,40 @@
 <h2 class="sub-header">编辑用户</h2>
-<div class="table-responsive">
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">姓名</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">邮箱</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">电话</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-info">创建</button>
-    </form>
-</div>
+<form (submit)=editUser()>
+    <div class="form-group">
+        <label for="username">姓名</label>
+        <input type="text" class="form-control" id="username" name ="username" placeholder="username" [(ngModel)]="formData.username" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="password">密码</label>
+        <input type="text" class="form-control" id="password" name ="password" placeholder="password" [(ngModel)]="formData.password">
+    </div>
+    <div class="form-group">
+        <label for="tel">电话</label>
+        <input type="tel" class="form-control" id="tel" name ="tel" placeholder="tel" [(ngModel)]="formData.tel">
+    </div>
+    <div class="form-group">
+        <label for="birthday">生日</label>
+        <input type="date" class="form-control" id="birthday" name ="birthday" placeholder="birthday" [(ngModel)]="formData.birthday">
+    </div>
+    <div class="form-group">
+        <label for="address">地址</label>
+        <input type="text" class="form-control" id="address" name ="address" placeholder="address" [(ngModel)]="formData.address">
+    </div>
+    <div class="form-group">
+        <label for="email">邮箱</label>
+        <input type="email" class="form-control" id="email" name ="email" placeholder="Email" [(ngModel)]="formData.email">
+    </div>
+    <div class="form-group">
+        <label for="userstatus">用户状态</label>
+        <input type="number" class="form-control" id="userstatus" name ="userstatus" placeholder="userstatus" [(ngModel)]="formData.userstatus">
+    </div>
+    <div class="form-group">
+        <label for="isdeleted">是否被删除</label>
+        <input type="number" class="form-control" id="isdeleted" name ="isdeleted" placeholder="isdeleted" [(ngModel)]="formData.isdeleted">
+    </div>
+    <div class="form-group">
+        <label for="islocked">是否被锁定</label>
+        <input type="number" class="form-control" id="islocked" name ="islocked" placeholder="islocked" [(ngModel)]="formData.islocked">
+    </div>
+    <button type="submit" class="btn btn-info">编辑用户</button>
+</form>

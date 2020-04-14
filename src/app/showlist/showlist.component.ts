@@ -17,6 +17,10 @@ export class ShowlistComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.showlist();
+  }
+
+  showlist(){
     this.http.get('http://localhost:8080/user/list')
       .toPromise().then(data => {
         console.log(data)
@@ -26,21 +30,25 @@ export class ShowlistComponent implements OnInit {
       })
   }
 
-  gotoNewlist() {
-    this.Router.navigate(['/list/new'])
-  }
-
   deleteUserByName(username:string,e:any){
     e.preventDefault();
     if(!window.confirm('确定删除用户'+username+'吗？')){
       return 
     }
-    console.log(username);
-  }
-
-  editUserByName(username:string,e:any){
-    e.preventDefault();
-    this.Router.navigate(['/list/edit']);
+    this.http.post('http://localhost:8080/user/delete',username)
+    .toPromise()
+    .then(data=>{
+      if(data = true){
+        window.alert('删除成功')
+        this.showlist();
+      }
+      else{
+        window.alert('删除失败')
+      }
+    })
+    .catch(err=>{
+      window.alert('不可删除自己')
+    })
   }
 
 }

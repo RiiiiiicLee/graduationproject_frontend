@@ -35,6 +35,7 @@ export class NewlistComponent implements OnInit {
     .then(data =>{
       console.log(data)
       this.router.navigate(['/list'])
+      window.alert("用户"+this.formData.username+"已增加")
     })
     .catch(err=>{
       window.alert("新建用户失败")
