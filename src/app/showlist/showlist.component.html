@@ -22,7 +22,6 @@
                 <th>姓名</th>
                 <th>邮箱</th>
                 <th>电话</th>
-                <th>标签</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -31,7 +30,6 @@
                 <td>{{user.username}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.tel}}</td>
-                <td><span class="label label-info">朋友</span></td>
                 <td>
                     <a [routerLink]="['/list/edit',user.username]" routerLinkActive="router-link-active"  href="#">编辑</a>
                     <a (click)="deleteUserByName(user.username,$event)" href="#">&nbsp;删除</a>

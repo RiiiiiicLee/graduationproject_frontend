@@ -20,7 +20,7 @@ export class ShowlistComponent implements OnInit {
     this.showlist();
   }
 
-  showlist(){
+  showlist() {
     this.http.get('http://localhost:8080/user/list')
       .toPromise().then(data => {
         console.log(data)
@@ -30,25 +30,25 @@ export class ShowlistComponent implements OnInit {
       })
   }
 
-  deleteUserByName(username:string,e:any){
+  deleteUserByName(username: string, e: any) {
     e.preventDefault();
-    if(!window.confirm('确定删除用户'+username+'吗？')){
-      return 
+    if (!window.confirm('确定删除用户' + username + '吗？')) {
+      return
     }
-    this.http.post('http://localhost:8080/user/delete',username)
-    .toPromise()
-    .then(data=>{
-      if(data = true){
-        window.alert('删除成功')
-        this.showlist();
-      }
-      else{
-        window.alert('删除失败')
-      }
-    })
-    .catch(err=>{
-      window.alert('不可删除自己')
-    })
+    this.http.post('http://localhost:8080/user/delete', username)
+      .toPromise()
+      .then(data => {
+        if (data = true) {
+          window.alert('删除成功')
+          this.showlist();
+        }
+        else {
+          window.alert('删除失败')
+        }
+      })
+      .catch(err => {
+        window.alert('不可删除自己')
+      })
   }
 
 }
