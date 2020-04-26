@@ -1,0 +1,36 @@
+<h2 class="sub-header">新增商品</h2>
+<form (submit)=newGoods()>
+    <div class="form-group">
+        <label for="goodsname">商品名</label>
+        <input type="text" class="form-control" id="goodsname" name ="goodsname" placeholder="goodsname" [(ngModel)]="formData.goodsname">
+    </div>
+    <div class="form-group">
+        <label for="goodsimg">照片url</label>
+        <input type="text" class="form-control" id="goodsimg" name ="goodsimg" placeholder="goodsimg" [(ngModel)]="formData.goodsimg">
+    </div>
+    <div class="form-group">
+        <label for="sponsor">车队</label>
+        <input type="text" class="form-control" id="sponsor" name ="sponsor" placeholder="sponsor" [(ngModel)]="formData.sponsor">
+    </div>
+    <div class="form-group">
+        <label for="goodsprice">售价</label>
+        <input type="number" class="form-control" id="goodsprice" name ="goodsprice" placeholder="goodsprice" [(ngModel)]="formData.goodsprice">
+    </div>
+    <div class="form-group">
+        <label for="discount">折扣</label>
+        <input type="number" class="form-control" id="discount" name ="discount" placeholder="discount" [(ngModel)]="formData.discount">
+    </div>
+    <div class="form-group">
+        <label for="goodsinfo">商品信息</label>
+        <input type="text" class="form-control" id="goodsinfo" name ="goodsinfo" placeholder="goodsinfo" [(ngModel)]="formData.goodsinfo">
+    </div>
+    <div class="form-group">
+        <label for="supplier">供应</label>
+        <input type="text" class="form-control" id="supplier" name ="supplier" placeholder="supplier" [(ngModel)]="formData.supplier">
+    </div>
+    <div class="form-group">
+        <label for="distributor">经销</label>
+        <input type="text" class="form-control" id="distributor" name ="distributor" placeholder="distributor" [(ngModel)]="formData.distributor">
+    </div>
+    <button type="submit" class="btn btn-info">新增商品</button>
+</form>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
 
   loginForm = {
-    username: '',
+    adminname: '',
     password: ''
   }
 
@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     const formData = this.loginForm;
-    this.http.post('http://localhost:8080/login', formData).toPromise().then((data: any) => {
+    this.http.post('http://localhost:8080/admin/login', formData).toPromise().then((data: any) => {
       window.localStorage.setItem('auth_token', data.Token)
-      window.localStorage.setItem('user_name', data.User.username)
+      window.localStorage.setItem('user_name', data.Admin.adminname)
       console.log(data)
       this.Router.navigate(['/list'])
     }).catch(err => {

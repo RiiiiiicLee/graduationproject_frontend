@@ -19,4 +19,9 @@ export class SidebarComponent implements OnInit {
     this.Router.navigate(['/list'])
   }
 
+  gotoGoods(){
+    this.Router.navigate(['/goods'])
+  }
+  
+
 }

@@ -1,0 +1,42 @@
+<h2 class="sub-header">商品列表</h2>
+<div class="table-responsive">
+    <!-- Single button -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            所有 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">朋友</a></li>
+            <li><a href="#">家人</a></li>
+            <li><a href="#">公司</a></li>
+            <li><a href="#">同学</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <a class="btn btn-success pull-right" [routerLink]="['/goods/new']" routerLinkActive="router-link-active" >新增商品</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>图片</th>
+                <th>车队</th>
+                <th>价格</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let good of goods">
+                <td>{{good.goodsname}}</td>
+                <td><img src="{{good.goodsimg}}" alt="{{good.goodsname}}" height="60%"></td>
+                <td>{{good.sponsor}}</td>
+                <td>{{good.goodsprice}}</td>
+                <td>
+                    <a [routerLink]="['/goods/edit',good.goodsid]" routerLinkActive="router-link-active"  href="#">编辑</a>
+                    <a (click)="deleteGoodsById(good.goodsid,$event)" href="#">&nbsp;删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

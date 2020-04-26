@@ -13,6 +13,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { EditlistComponent } from './editlist/editlist.component';
 import { NewlistComponent } from './newlist/newlist.component';
 import { GlobalHttpInterceptor } from './global.interceptor';
+import { GoodsComponent } from './goods/goods.component';
+import { EditgoodsComponent } from './editgoods/editgoods.component';
+import { NewgoodsComponent } from './newgoods/newgoods.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { GlobalHttpInterceptor } from './global.interceptor';
     ShowlistComponent,
     LayoutComponent,
     EditlistComponent,
-    NewlistComponent
+    NewlistComponent,
+    GoodsComponent,
+    EditgoodsComponent,
+    NewgoodsComponent
   ],
   imports: [
     BrowserModule,
