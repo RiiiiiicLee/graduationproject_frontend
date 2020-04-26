@@ -16,6 +16,9 @@ import { GlobalHttpInterceptor } from './global.interceptor';
 import { GoodsComponent } from './goods/goods.component';
 import { EditgoodsComponent } from './editgoods/editgoods.component';
 import { NewgoodsComponent } from './newgoods/newgoods.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { NewnotificationsComponent } from './newnotifications/newnotifications.component';
+import { EditnotificationsComponent } from './editnotifications/editnotifications.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { NewgoodsComponent } from './newgoods/newgoods.component';
     NewlistComponent,
     GoodsComponent,
     EditgoodsComponent,
-    NewgoodsComponent
+    NewgoodsComponent,
+    NotificationsComponent,
+    NewnotificationsComponent,
+    EditnotificationsComponent
   ],
   imports: [
     BrowserModule,

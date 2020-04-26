@@ -23,5 +23,8 @@ export class SidebarComponent implements OnInit {
     this.Router.navigate(['/goods'])
   }
   
+  gotoNoti(){
+    this.Router.navigate(['/notification'])
+  }
 
 }
