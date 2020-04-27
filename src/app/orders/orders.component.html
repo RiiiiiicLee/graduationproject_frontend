@@ -1,0 +1,35 @@
+<h2 class="sub-header">订单列表</h2>
+<div class="table-responsive">
+    <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            所有 <span class="caret"></span>
+        </button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>用户id</th>
+                <th>用户订单号</th>
+                <th>收件人</th>
+                <th>收件电话</th>
+                <th>收件地址</th>
+                <th>操作：</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{order.userid}}</td>
+                <td>{{order.orderid}}</td>
+                <td>{{order.addressname}}</td>
+                <td>{{order.addressinfo}}</td>
+                <td>{{order.tel}}</td>
+                <td>
+                    <a [routerLink]="['/order/edit']" [queryParams]="{userid:order.userid,orderid:order.orderid}" routerLinkActive="router-link-active"  href="#" *ngIf="order.isdeleted===0">编辑</a>
+                    <a (click)="deleteordersById(order.userid,order.orderid,1,$event)" href="#" *ngIf="order.isdeleted===0">&nbsp;删除订单</a>
+                    <a (click)="deleteordersById(order.userid,order.orderid,0,$event)" href="#" *ngIf="order.isdeleted===1">恢复订单</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

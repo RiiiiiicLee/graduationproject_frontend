@@ -19,6 +19,8 @@ import { NewgoodsComponent } from './newgoods/newgoods.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NewnotificationsComponent } from './newnotifications/newnotifications.component';
 import { EditnotificationsComponent } from './editnotifications/editnotifications.component';
+import { OrdersComponent } from './orders/orders.component';
+import { EditordersComponent } from './editorders/editorders.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { EditnotificationsComponent } from './editnotifications/editnotification
     NewgoodsComponent,
     NotificationsComponent,
     NewnotificationsComponent,
-    EditnotificationsComponent
+    EditnotificationsComponent,
+    OrdersComponent,
+    EditordersComponent
   ],
   imports: [
     BrowserModule,

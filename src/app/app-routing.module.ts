@@ -10,10 +10,12 @@ import {EditlistComponent} from './editlist/editlist.component';
 import { GoodsComponent } from './goods/goods.component';
 import { EditgoodsComponent } from './editgoods/editgoods.component';
 import { NewgoodsComponent } from './newgoods/newgoods.component';
-import { compileComponentFromMetadata } from '@angular/compiler';
+import { compileComponentFromMetadata, componentFactoryName } from '@angular/compiler';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NewnotificationsComponent } from './newnotifications/newnotifications.component';
 import { EditnotificationsComponent } from './editnotifications/editnotifications.component';
+import { OrdersComponent } from './orders/orders.component';
+import { EditordersComponent } from './editorders/editorders.component';
 
 const routes: Routes = [
   {
@@ -80,6 +82,20 @@ const routes: Routes = [
       {
         path:'edit/:notificationid',
         component:EditnotificationsComponent
+      }
+    ]
+  },
+  {
+    path:'order',
+    component:LayoutComponent,
+    children:[
+      {
+        path:'',
+        component:OrdersComponent
+      },
+      {
+        path:'edit',
+        component:EditordersComponent
       }
     ]
   }
