@@ -59,9 +59,6 @@ export class OrdersComponent implements OnInit {
 
   deleteordersById(userid:string,orderid: string,isdeleted:number, e: any) {
     e.preventDefault();
-    if (!window.confirm('确定删除订单吗？')) {
-      return
-    }
     let deleteData={
       userid:userid,
       orderid:orderid,
@@ -71,7 +68,7 @@ export class OrdersComponent implements OnInit {
       .toPromise()
       .then(data => {
         if (data != null) {
-          window.alert('删除成功')
+          window.alert('成功')
           location.reload();
         }
         else {
