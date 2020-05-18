@@ -2,35 +2,67 @@
 <form (submit)=newGoods()>
     <div class="form-group">
         <label for="goodsname">商品名</label>
-        <input type="text" class="form-control" id="goodsname" name ="goodsname" placeholder="goodsname" [(ngModel)]="formData.goodsname">
+        <input type="text" class="form-control" id="goodsname" name="goodsname" placeholder="goodsname"
+            [(ngModel)]="formData.goodsname" required #goodsname="ngModel">
+        <div *ngIf="goodsname.invalid && (goodsname.dirty || goodsname.touched)" class="alert alert-danger">
+            <div *ngIf="goodsname.errors.required">goodsname is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="goodsimg">照片url</label>
-        <input type="text" class="form-control" id="goodsimg" name ="goodsimg" placeholder="goodsimg" [(ngModel)]="formData.goodsimg">
+        <input type="text" class="form-control" id="goodsimg" name="goodsimg" placeholder="goodsimg"
+            [(ngModel)]="formData.goodsimg" required #goodsimg="ngModel">
+        <div *ngIf="goodsimg.invalid && (goodsimg.dirty || goodsimg.touched)" class="alert alert-danger">
+            <div *ngIf="goodsimg.errors.required">goodsimg is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="sponsor">车队</label>
-        <input type="text" class="form-control" id="sponsor" name ="sponsor" placeholder="sponsor" [(ngModel)]="formData.sponsor">
+        <input type="text" class="form-control" id="sponsor" name="sponsor" placeholder="sponsor"
+            [(ngModel)]="formData.sponsor" required #sponsor="ngModel">
+        <div *ngIf="sponsor.invalid && (sponsor.dirty || sponsor.touched)" class="alert alert-danger">
+            <div *ngIf="sponsor.errors.required">sponsor is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="goodsprice">售价</label>
-        <input type="number" class="form-control" id="goodsprice" name ="goodsprice" placeholder="goodsprice" [(ngModel)]="formData.goodsprice">
+        <input type="number" class="form-control" id="goodsprice" name="goodsprice" placeholder="goodsprice"
+            [(ngModel)]="formData.goodsprice" required #goodsprice="ngModel">
+        <div *ngIf="goodsprice.invalid && (goodsprice.dirty || goodsprice.touched)" class="alert alert-danger">
+            <div *ngIf="goodsprice.errors.required">goodsprice is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="discount">折扣</label>
-        <input type="number" class="form-control" id="discount" name ="discount" placeholder="discount" [(ngModel)]="formData.discount">
+        <input type="number" class="form-control" id="discount" name="discount" placeholder="discount"
+            [(ngModel)]="formData.discount" required #discount="ngModel">
+        <div *ngIf="discount.invalid && (discount.dirty || discount.touched)" class="alert alert-danger">
+            <div *ngIf="discount.errors.required">discount is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="goodsinfo">商品信息</label>
-        <input type="text" class="form-control" id="goodsinfo" name ="goodsinfo" placeholder="goodsinfo" [(ngModel)]="formData.goodsinfo">
+        <input type="text" class="form-control" id="goodsinfo" name="goodsinfo" placeholder="goodsinfo"
+            [(ngModel)]="formData.goodsinfo" required #goodsinfo="ngModel">
+        <div *ngIf="goodsinfo.invalid && (goodsinfo.dirty || goodsinfo.touched)" class="alert alert-danger">
+            <div *ngIf="goodsinfo.errors.required">goodsinfo is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="supplier">供应</label>
-        <input type="text" class="form-control" id="supplier" name ="supplier" placeholder="supplier" [(ngModel)]="formData.supplier">
+        <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier"
+            [(ngModel)]="formData.supplier" required #supplier="ngModel">
+        <div *ngIf="supplier.invalid && (supplier.dirty || supplier.touched)" class="alert alert-danger">
+            <div *ngIf="supplier.errors.required">supplier is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="distributor">经销</label>
-        <input type="text" class="form-control" id="distributor" name ="distributor" placeholder="distributor" [(ngModel)]="formData.distributor">
+        <input type="text" class="form-control" id="distributor" name="distributor" placeholder="distributor"
+            [(ngModel)]="formData.distributor" required #distributor="ngModel">
+        <div *ngIf="distributor.invalid && (distributor.dirty || distributor.touched)" class="alert alert-danger">
+            <div *ngIf="distributor.errors.required">distributor is required</div>
+        </div>
     </div>
     <button type="submit" class="btn btn-info">新增商品</button>
 </form>

@@ -1,0 +1,31 @@
+<h2 class="sub-header">论坛列表</h2>
+<div class="table-responsive">
+    <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            所有 <span class="caret"></span>
+        </button>
+    </div>
+    <a class="btn btn-success pull-right" [routerLink]="['/forum/reported']" >查看被举报回复</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>论坛编号</th>
+                <th>发帖人</th>
+                <th>发帖内容</th>
+                <th>时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let forum of forumlist">
+                <td>{{forum.forumorderid}}</td>
+                <td>{{forum.username}}</td>
+                <td>{{forum.content}}</td>
+                <td>{{forum.createtime|date:'short'}}</td>
+                <td>
+                    <a [routerLink]="['/forum/detail',forum.forumorderid]" routerLinkActive="router-link-active" href="#">查看</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

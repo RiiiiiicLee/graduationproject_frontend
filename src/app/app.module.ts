@@ -21,6 +21,9 @@ import { NewnotificationsComponent } from './newnotifications/newnotifications.c
 import { EditnotificationsComponent } from './editnotifications/editnotifications.component';
 import { OrdersComponent } from './orders/orders.component';
 import { EditordersComponent } from './editorders/editorders.component';
+import { ForumComponent } from './forum/forum.component';
+import { ForumdetailComponent } from './forumdetail/forumdetail.component';
+import { ForumreportedComponent } from './forumreported/forumreported.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { EditordersComponent } from './editorders/editorders.component';
     NewnotificationsComponent,
     EditnotificationsComponent,
     OrdersComponent,
-    EditordersComponent
+    EditordersComponent,
+    ForumComponent,
+    ForumdetailComponent,
+    ForumreportedComponent
   ],
   imports: [
     BrowserModule,

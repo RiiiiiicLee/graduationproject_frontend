@@ -2,20 +2,33 @@
 <form (submit)=editNotification()>
     <div class="form-group">
         <label for="notiname">新闻&通知标题</label>
-        <input type="text" class="form-control" id="notiname" name ="notiname" placeholder="notiname" [(ngModel)]="formData.notiname" readonly="readonly">
+        <input type="text" class="form-control" id="notiname" name="notiname" placeholder="notiname"
+            [(ngModel)]="formData.notiname" readonly="readonly">
     </div>
     <div class="form-group">
         <label for="notiimgurl">照片</label>
         <div class="img"><img src="{{formData.notiimgurl}}" alt="formData.notiimgname" height="30%"></div>
-        <input type="text" class="form-control" id="notiimgurl" name ="notiimgurl" placeholder="notiimgurl" [(ngModel)]="formData.notiimgurl">
+        <input type="text" class="form-control" id="notiimgurl" name="notiimgurl" placeholder="notiimgurl"
+            [(ngModel)]="formData.notiimgurl" required #notiimgurl="ngModel">
+            <div *ngIf="notiimgurl.invalid && (notiimgurl.dirty || notiimgurl.touched)" class="alert alert-danger">
+                <div *ngIf="notiimgurl.errors.required">notiimgurl is required</div>
+            </div>
     </div>
     <div class="form-group">
         <label for="notiimgname">照片名称</label>
-        <input type="text" class="form-control" id="notiimgname" name ="notiimgname" placeholder="notiimgname" [(ngModel)]="formData.notiimgname">
+        <input type="text" class="form-control" id="notiimgname" name="notiimgname" placeholder="notiimgname"
+            [(ngModel)]="formData.notiimgname" required #notiimgname="ngModel">
+            <div *ngIf="notiimgname.invalid && (notiimgname.dirty || notiimgname.touched)" class="alert alert-danger">
+                <div *ngIf="notiimgname.errors.required">notiimgname is required</div>
+            </div>
     </div>
     <div class="form-group">
         <label for="noticontent">新闻&通知内容</label>
-        <input type="text" class="form-control" id="noticontent" name ="noticontent" placeholder="noticontent" [(ngModel)]="formData.noticontent">
+        <input type="text" class="form-control" id="noticontent" name="noticontent" placeholder="noticontent"
+            [(ngModel)]="formData.noticontent" required #noticontent="ngModel">
+            <div *ngIf="noticontent.invalid && (noticontent.dirty || noticontent.touched)" class="alert alert-danger">
+                <div *ngIf="noticontent.errors.required">noticontent is required</div>
+            </div>
     </div>
     <button type="submit" class="btn btn-info">编辑新闻&通知</button>
 </form>

@@ -16,6 +16,9 @@ import { NewnotificationsComponent } from './newnotifications/newnotifications.c
 import { EditnotificationsComponent } from './editnotifications/editnotifications.component';
 import { OrdersComponent } from './orders/orders.component';
 import { EditordersComponent } from './editorders/editorders.component';
+import { ForumComponent } from './forum/forum.component';
+import { ForumdetailComponent } from './forumdetail/forumdetail.component';
+import { ForumreportedComponent } from './forumreported/forumreported.component';
 
 const routes: Routes = [
   {
@@ -96,6 +99,24 @@ const routes: Routes = [
       {
         path:'edit',
         component:EditordersComponent
+      }
+    ]
+  },
+  {
+    path:'forum',
+    component:LayoutComponent,
+    children:[
+      {
+        path:'',
+        component:ForumComponent
+      },
+      {
+        path:'reported',
+        component:ForumreportedComponent
+      },
+      {
+        path:'detail/:forumid',
+        component:ForumdetailComponent
       }
     ]
   }

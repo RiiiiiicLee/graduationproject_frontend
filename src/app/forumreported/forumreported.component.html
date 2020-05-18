@@ -1,0 +1,32 @@
+<h2 class="sub-header">论坛被举报回复</h2>
+<div class="table-responsive">
+    <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            所有 <span class="caret"></span>
+        </button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>帖子编号</th>
+                <th>发帖人</th>
+                <th>发帖内容</th>
+                <th>时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let forum of forumlist">
+                <td>{{forum.forumid}}</td>
+                <td>{{forum.username}}</td>
+                <td>{{forum.content}}</td>
+                <td>{{forum.createtime|date:'short'}}</td>
+                <td>
+                    <a (click)="lockForumdetailByid(forum.forumid,forum.islocked,$event)" href="#" *ngIf="forum.islocked!=1 && forum.islocked!=2">&nbsp;锁定</a>
+                    <a (click)="lockForumdetailByid(forum.forumid,forum.islocked,$event)" href="#" *ngIf="forum.islocked==1">已被举报&nbsp;锁定</a>
+                    <a (click)="lockForumdetailByid(forum.forumid,forum.islocked,$event)" href="#" *ngIf="forum.islocked==2">已被锁定，恢复</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

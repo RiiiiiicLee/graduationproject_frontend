@@ -31,4 +31,8 @@ export class SidebarComponent implements OnInit {
     this.Router.navigate(['/notification'])
   }
 
+  gotoForum(){
+    this.Router.navigate(['/forum'])
+  }
+
 }

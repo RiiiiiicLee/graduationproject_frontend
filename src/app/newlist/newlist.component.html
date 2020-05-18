@@ -2,39 +2,80 @@
 <form (submit)=addUser()>
     <div class="form-group">
         <label for="username">姓名</label>
-        <input type="text" class="form-control" id="username" name ="username" placeholder="username" [(ngModel)]="formData.username">
+        <input type="text" class="form-control" id="username" name="username" placeholder="username"
+            [(ngModel)]="formData.username" required #username="ngModel">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+            <div *ngIf="username.errors.required">name is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="password">密码</label>
-        <input type="text" class="form-control" id="password" name ="password" placeholder="password" [(ngModel)]="formData.password">
+        <input type="text" class="form-control" id="password" name="password" placeholder="password"
+            [(ngModel)]="formData.password" required #password="ngModel">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors.required">password is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="tel">电话</label>
-        <input type="tel" class="form-control" id="tel" name ="tel" placeholder="tel" [(ngModel)]="formData.tel">
+        <input type="tel" class="form-control" id="tel" name="tel" placeholder="tel" [(ngModel)]="formData.tel" required
+            pattern="^\d{11}$" #tel="ngModel">
+        <div *ngIf="tel.invalid && (tel.dirty || tel.touched)" class="alert alert-danger">
+            <div *ngIf="tel.errors.required">tel is required</div>
+            <div *ngIf="tel.errors.pattern">输入11位</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="birthday">生日</label>
-        <input type="date" class="form-control" id="birthday" name ="birthday" placeholder="birthday" [(ngModel)]="formData.birthday">
+        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="birthday"
+            [(ngModel)]="formData.birthday" required #birthday="ngModel">
+        <div *ngIf="birthday.invalid && (birthday.dirty || birthday.touched)" class="alert alert-danger">
+            <div *ngIf="birthday.errors.required">birthday is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="address">地址</label>
-        <input type="text" class="form-control" id="address" name ="address" placeholder="address" [(ngModel)]="formData.address">
+        <input type="text" class="form-control" id="address" name="address" placeholder="address"
+            [(ngModel)]="formData.address" required #address="ngModel">
+        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+            <div *ngIf="address.errors.required">address is required</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="email">邮箱</label>
-        <input type="email" class="form-control" id="email" name ="email" placeholder="Email" [(ngModel)]="formData.email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+            [(ngModel)]="formData.email" required email #email="ngModel">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">email is required</div>
+            <div *ngIf="email.errors.email">请输入email地址</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="userstatus">用户状态</label>
-        <input type="number" class="form-control" id="userstatus" name ="userstatus" placeholder="userstatus" [(ngModel)]="formData.userstatus">
+        <input type="number" class="form-control" id="userstatus" name="userstatus" placeholder="userstatus"
+            [(ngModel)]="formData.userstatus" required pattern="^[01]$" #userstatus="ngModel">
+        <div *ngIf="userstatus.invalid && (userstatus.dirty || userstatus.touched)" class="alert alert-danger">
+            <div *ngIf="userstatus.errors.required">userstatus is required</div>
+            <div *ngIf="userstatus.errors.pattern">请输入0或1</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="isdeleted">是否被删除</label>
-        <input type="number" class="form-control" id="isdeleted" name ="isdeleted" placeholder="isdeleted" [(ngModel)]="formData.isdeleted">
+        <input type="number" class="form-control" id="isdeleted" name="isdeleted" placeholder="isdeleted"
+            [(ngModel)]="formData.isdeleted" required pattern="^[01]$" #isdeleted="ngModel">
+        <div *ngIf="isdeleted.invalid && (isdeleted.dirty || isdeleted.touched)" class="alert alert-danger">
+            <div *ngIf="isdeleted.errors.required">isdeleted is required</div>
+            <div *ngIf="isdeleted.errors.pattern">请输入0或1</div>
+        </div>
     </div>
     <div class="form-group">
         <label for="islocked">是否被锁定</label>
-        <input type="number" class="form-control" id="islocked" name ="islocked" placeholder="islocked" [(ngModel)]="formData.islocked">
+        <input type="number" class="form-control" id="islocked" name="islocked" placeholder="islocked"
+            [(ngModel)]="formData.islocked" required pattern="^[012]$" #islocked="ngModel">
+        <div *ngIf="islocked.invalid && (islocked.dirty || islocked.touched)" class="alert alert-danger">
+            <div *ngIf="islocked.errors.required">islocked is required</div>
+            <div *ngIf="islocked.errors.pattern">请输入0或1或2</div>
+        </div>
     </div>
     <button type="submit" class="btn btn-info">创建</button>
 </form>
